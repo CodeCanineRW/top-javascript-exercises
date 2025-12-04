@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+</head>
+<body style="background-color: black; color: antiquewhite; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h1>This is just a JavaScript practice page</h1>
+    <p>Script output instead of using console.log:</p>
+    <br><br>
+    <textarea id="outputArea" placeholder="Javascript output here" cols="80" rows="20" style="background-color: #282828; color: #e88223;"></textarea>
+    <script>
+    // Reference to the textarea element
+        const outputArea = document.getElementById('outputArea');
+    // Function to append a message to the textarea
+        function logToTextarea(message) {
+    // Add a newline character for formatting
+        outputArea.value += message + '\n';
+    // Optional: Scroll to the bottom of the textarea to show the latest log
+        outputArea.scrollTop = outputArea.scrollHeight;
+    }
+
+    // Practice code can be entered below these test cases
+        // logToTextarea('This is only a Test, repeat, this is just a test');
+        // logToTextarea('Holy Crap, I actually got this to work! I am shocked... woohoo!');
+        // logToTextarea('And I might have just fixed an error using Dev Tools! Bam, double win!');
+
+        // function showMessage() {
+        //     alert('Welcome to day 3 of Javascript');
+        // }
+        // showMessage();
+
+        // const birthday = 1986;
+        // let date = 2025;
+        // let age = date - birthday;
+        // let celebrate = false
+
+        // if (celebrate) {
+        //     logToTextarea('I am currently ' + age + ' years old.');            
+        // } else {
+        //     logToTextarea('I am currently ' + (age - 1) + ' years old.');            
+        // }
+
+        // if (celebrate) {
+        //     console.log('I am currently ' + age + ' years old.');            
+        // } else {
+        //     console.log('I am currently ' + (age - 1) + ' years old.');            
+        // }
+
+        // let getValueX = prompt('Enter value for x, for x^n', );
+        // let getValueN = prompt('Enter value for n, for x^n', ); 
+
+        // function calcPower(a, b) {
+        //      a = getValueX;
+        //      b = getValueN;
+        //     if (b <= 1) {
+        //         return a;
+        //     } else {
+        //         while (b > 1) {
+        //             a *= getValueX;
+        //             b--;
+        //         }
+        //     }
+        //     return a;
+        // }
+
+        // function showResult() {
+        //      if ( calcPower(getValueX, getValueN) ) {
+        //         logToTextarea(`${getValueX} to the power of ${getValueN} is ${calcPower()}`)
+        //      } else {
+        //          logToTextarea('Please enter only numbers');
+        //     }
+        // }
+
+        // showResult();
+
+        function add7(num) {
+        return num + 7;
+        }
+                // outputArea.value += `The answer to assignment 1 is ${add7(10)}.`;
+                logToTextarea(`The answer to assignment 1 is ${add7(10)}.`)
+
+        function multiply(a, b) {
+            return a * b;
+        }
+                // outputArea.value += `The answer to assignment 2 is ${multiply(3, 2)}.`;
+                logToTextarea(`The answer to assignment 2 is ${multiply(3, 2)}.`)
+                
+
+        function capitalize(inputString) {
+            // let lowerCase = inputString.toLowerCase();
+            // let firstLetter = lowerCase.charAt(0);
+            // let upperCaseFirstLetter = firstLetter.toUpperCase();
+            // let result = lowerCase.replace(firstLetter, upperCaseFirstLetter);
+            // return result;
+            let allLowerCase = inputString.toLowerCase();
+             return allLowerCase.replace(allLowerCase.charAt(0), allLowerCase.charAt(0).toUpperCase());
+        }
+                // outputArea.value += `The answer to assignment 3 is ${capitalize('abCD')}.`;
+                logToTextarea(`The result of assignment 3 is ${capitalize('aJfa99ASFB')}.`)
+
+        function lastLetter(userInputString) {
+            return userInputString.charAt(userInputString.length-1);
+        }
+                logToTextarea(`The result of assignment 4 is ${lastLetter('aJfa99ASFB')}.`)
+
+
+        // use for loop to output even numbers from 0 to 10
+
+        // for (let i = 0; i <= 10; i++) {
+        //     if (i % 2 == 0) {
+        //         logToTextarea(i);
+        //     }
+        // }
+
+        /* rewrite the for loop to a while loop without altering bevior
+        for (let i = 0; i < 3; i++) {
+        alert( `number ${i}!` );
+        }
+        */
+
+        // let i = 0;
+        // while (i < 3) {
+        //     logToTextarea(i);
+        //     i++;
+        // }
+
+        /* Write a loop which prompts for a number greater than 100. 
+        If the visitor enters another number – ask them to input again.
+        The loop must ask for a number until either the visitor enters a number 
+        greater than 100 or cancels the input/enters an empty line.
+        Here we can assume that the visitor only inputs numbers. 
+        There’s no need to implement a special handling for a non-numeric input in this task. */
+
+        // let entry;
+
+        // do {
+        //     entry = prompt('Enter a number greater than 100.', '');
+        //     logToTextarea(`You entered: ${entry}`);
+        // } while ( entry < 100 && entry ); 
+        
+        // cancel in prompt returns 'null'. when compared, null is coerced to 0, which makes coparison true and continues.
+        // && entry returns as false (null is falsy), which ends the loop when hit cancel.
+
+        /* An integer number greater than 1 is called a prime if it cannot be divided without a remainder by anything 
+        except 1 and itself.
+        In other words, n > 1 is a prime if it can’t be evenly divided by anything except 1 and n.
+        For example, 5 is a prime, because it cannot be divided without a remainder by 2, 3 and 4.
+        Write the code which outputs prime numbers in the interval from 2 to n.
+        For n = 10 the result will be 2,3,5,7.
+        P.S. The code should work for any n, not be hard-tuned for any fixed value. */
+
+        // Is numRequested prime? see if % by self - 1 is 0; not prime. if remainder, continue to 1. 
+            // if % never hits 0, number is prime. print.
+        // repeat with numRequested -1
+
+        // let numRequested = prompt('Output prime numbers up to what number?');
+
+        // for (i = 2; i < numRequested; i++) {
+        //     if (numRequested % i !== 0 && i === numRequested - 1) {
+        //         logToTextarea(`${numRequested} is a prime number`);
+        //     } else if (numRequested % i !== 0){
+        //         continue;
+        //     } else if (numRequested % i === 0) {
+        //         logToTextarea(`${numRequested} is not a prime number`);
+        //         break;
+        //     }
+        // }
+
+        // let listPrimesTo = prompt('Output prime numbers up to what number?');
+
+        // logToTextarea(`Prime numbers up to ${listPrimesTo}`);
+        // findPrimes: for (let i = 2; i<= listPrimesTo; i++ ){
+        //     for (let j = 2; j<i; j++) {
+        //         if (i % j === 0) continue findPrimes;
+        //     }
+        //     outputArea.value += i + ' ';
+        // }
+
+        // Array Practice - Javascript.info Arrays
+
+        // let styles = ['Jazz', 'Blues'];
+        // logToTextarea('1: ' + styles);
+
+        // styles.push('Rock-n-Roll');
+        // logToTextarea('2: ' + styles);
+        // console.log(styles);
+
+        // function findMiddle(array) {
+        //    let middle = Math.floor((array.length / 2));
+        //    return middle;
+        // }
+
+        // styles[findMiddle(styles)] = 'Classics';
+        // logToTextarea('3: ' + styles);
+
+        // styles.shift();
+        // logToTextarea('4: ' + styles);
+
+        // styles.unshift('Rap', 'Reggae');
+        // logToTextarea('5: ' + styles);
+
+        // let test = ['a', 'b'];
+        // test.push(function() {
+        //     alert( this );
+        // })
+
+        // test[2]();
+
+
+
+// while with if preferred here to prevent a non-number
+// from being added to the array. condition checked after added.
+        // function sumInput() {
+        //     let inputArray = [];
+        //     let input;
+        //     do {
+        //         input = prompt('Enter a number to sum');
+        //         inputArray.push(+input);
+        //     } while (input && input !== '' && isFinite(input));
+        //     logToTextarea(inputArray);
+
+        //     let sumTotal = 0;
+        //     for (let value of inputArray) {
+        //         sumTotal += value;
+        //     }
+        //     logToTextarea('The sum is: ' + sumTotal)
+        // }
+
+        // sumInput();
+
+
+        logToTextarea( 300 / 8);
+
+        let sampleString = 'my-short-string';
+
+        function camelize(str) {
+            return str
+            .split('-')
+            .map(
+                (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+            )
+            .join('');
+        }
+        console.log(sampleString);
+        console.log(camelize(sampleString));
+
+
+    </script>
+</body>
+</html>
